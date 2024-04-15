@@ -63,7 +63,7 @@ function populate() {
   // Check if the user has scrolled to the bottom
   if (windowRelativeBottom <= document.documentElement.clientHeight + 100) {
     document.body.insertAdjacentHTML("beforeend", `<p>${indent.replace(/ /g, ' ')}${wiggle}</p>`);
-    let maxIndent = Math.floor(window.innerWidth / 4.63); // Adjust the divisor to change the space per indent
+    let maxIndent = Math.floor(window.innerWidth / 4.65); // Adjust the divisor to change the space per indent
     if (adding) {
       indent += " ";
       if (indent.length > maxIndent) {
