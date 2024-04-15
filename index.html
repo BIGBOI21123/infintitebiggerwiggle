@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  });
+});
+</script>
+<body>
+
+<h1>Scroll me</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script>
+let wiggle = "bigger wiggle";
+let indent = "";
+let adding = true;
+
+function populate() {
+  let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
+  // Check if the user has scrolled to the bottom
+  if (windowRelativeBottom <= document.documentElement.clientHeight + 100) {
+    document.body.insertAdjacentHTML("beforeend", `<p>${indent.replace(/ /g, ' ')}${wiggle}</p>`);
+    let maxIndent = Math.floor(window.innerWidth / 4.62); // Adjust the divisor to change the space per indent
+    if (adding) {
+      indent += " ";
+      if (indent.length > maxIndent) {
+        adding = false;
+      }
+    } else {
+      indent = indent.slice(0, -1);
+      if (indent.length === 0) {
+        adding = true;
+      }
+    }
+  }
+}
+
+window.addEventListener('scroll', function() {
+  populate(); // Call populate function on scroll
+});
+
+populate(); // init document
+
+</script>
+
+</body>
+</html>
